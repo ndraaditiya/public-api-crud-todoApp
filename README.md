@@ -9,14 +9,13 @@ You'all can access the API URL on: https://calm-plum-jaguar-tutu.cyclic.app/todo
 This an example how you accessing the API and the responses you will got
 
 **#GET**
-![image](https://user-images.githubusercontent.com/73571506/213107252-6b3f5e69-5c11-4efa-89f3-fa4f8e47c019.png)
-
+![image](https://user-images.githubusercontent.com/73571506/214195171-f5b304c9-2ded-49f1-9a88-d7a337609f74.png)
 
 **#POST**
-![image](https://user-images.githubusercontent.com/73571506/213107128-341d7bfb-7fb2-41fb-9e6a-dee6210988ad.png)
+![image](https://user-images.githubusercontent.com/73571506/214195306-15686011-3aa6-422c-8d82-73c50ad8ca93.png)
 
 **#PUT**
-![image](https://user-images.githubusercontent.com/73571506/213108631-7f7d9957-4853-472c-abb6-10305f3be462.png)
+![image](https://user-images.githubusercontent.com/73571506/214195382-f29c5d24-75f4-411c-9425-0d0014c7400c.png)
 
 **#DELETE**
-![image](https://user-images.githubusercontent.com/73571506/213109029-4b6b8904-eb01-48c6-9421-5eb092f0cf98.png)
+![image](https://user-images.githubusercontent.com/73571506/214195431-29b38bab-4e53-4bcc-a12a-c1fe91b525c0.png)
