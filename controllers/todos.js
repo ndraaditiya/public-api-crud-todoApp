@@ -4,7 +4,18 @@ import mongoose from "mongoose"
 export const getTodos = async (req, res) => {
   try {
     const data = await Todo.find({})
-    data.length !== 0 ? res.json({ code: 200, data }) : res.json({ code: 404, message: "That's something wrong when saving the data, try again." })
+    data.length !== 0 ? res.json({ code: 200, data }) : res.json({ code: 404, message: "Data Not Found, Try to post somthing first." })
+  } catch (error) {
+    res.json({ code: 505, message: error.message })
+  }
+}
+
+export const getTodo = async (req, res) => {
+  const { id } = req.params
+  try {
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.json({ code: 404, message: 'No post with that id.' })
+    const data = await Todo.findById(id)
+    res.json({ code: 200, data })
   } catch (error) {
     res.json({ code: 505, message: error.message })
   }

@@ -2,6 +2,7 @@ import express from "express"
 
 import {
   deleteTodo,
+  getTodo,
   getTodos,
   insertTodo,
   updateTodo
@@ -10,6 +11,7 @@ import {
 const router = express.Router()
 
 router.get('/', getTodos)
+router.get('/:id', getTodo)
 router.post('/', insertTodo)
 router.put('/:id', updateTodo)
 router.delete('/:id', deleteTodo)
