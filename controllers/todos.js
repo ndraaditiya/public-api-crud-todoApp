@@ -13,7 +13,7 @@ export const getTodos = async (req, res) => {
 export const getTodo = async (req, res) => {
   const { id } = req.params
   try {
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.json({ code: 404, message: 'No post with that id.' })
+    if (!Types.ObjectId.isValid(id)) return res.json({ code: 404, message: 'No post with that id.' })
     const data = await Todo.findById(id)
     res.json({ code: 200, data })
   } catch (error) {
@@ -41,7 +41,7 @@ export const updateTodo = async (req, res) => {
 
   try {
     if (isComplete == undefined || typeof (isComplete) !== 'boolean') return res.json({ code: 400, message: 'Make sure you input the isComplpete object and give boolean value!' })
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.json({ code: 404, message: 'No post with that id.' })
+    if (!Types.ObjectId.isValid(id)) return res.json({ code: 404, message: 'No post with that id.' })
     const updateTodo = await Todo.findByIdAndUpdate(id, { isComplete, updatedAt: new Date(), id }, { new: true })
     res.json({ code: 200, data: updateTodo })
   } catch (error) {
@@ -53,7 +53,7 @@ export const deleteTodo = async (req, res) => {
   const id = req.params?.id
 
   try {
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.json({ code: 404, message: 'No post with that id.' })
+    if (!Types.ObjectId.isValid(id)) return res.json({ code: 404, message: 'No post with that id.' })
     await Todo.findByIdAndRemove(id)
     res.json({ code: 200, message: 'Sucessfully deleted todo!' })
   } catch (error) {
