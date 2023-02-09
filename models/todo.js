@@ -5,11 +5,11 @@ const todoSchema = mongoose.Schema({
   isComplete: Boolean,
   createdAt: {
     type: Date,
-    default: new Date()
+    default: new Date().toISOString()
   },
   updatedAt: {
     type: Date,
-    default: new Date()
+    default: new Date().toISOString()
   }
 })
 

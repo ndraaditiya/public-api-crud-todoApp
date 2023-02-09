@@ -42,7 +42,7 @@ export const updateTodo = async (req, res) => {
   try {
     if (isComplete == undefined || typeof (isComplete) !== 'boolean') return res.json({ code: 400, message: 'Make sure you input the isComplpete object and give boolean value!' })
     if (!Types.ObjectId.isValid(id)) return res.json({ code: 404, message: 'No post with that id.' })
-    const updateTodo = await Todo.findByIdAndUpdate(id, { isComplete, updatedAt: new Date(), id }, { new: true })
+    const updateTodo = await Todo.findByIdAndUpdate(id, { isComplete, updatedAt: new Date().toISOString(), id }, { new: true })
     res.json({ code: 200, data: updateTodo })
   } catch (error) {
     res.json({ code: 505, message: error.message })
