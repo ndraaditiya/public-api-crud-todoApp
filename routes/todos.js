@@ -1,4 +1,4 @@
-import express from "express"
+import express from 'express'
 
 import {
   deleteTodo,
@@ -6,16 +6,17 @@ import {
   getTodos,
   insertTodo,
   updateTodo,
-  getTodoByDate
+  getTodoByDate,
 } from '../controllers/todos.js'
+import { rateLimitChange, rateLimitGet } from '../middleware/ratelimit.js'
 
 const router = express.Router()
 
-router.get('/', getTodos)
-router.get('/:id', getTodo)
-router.post('/', insertTodo)
-router.put('/:id', updateTodo)
-router.delete('/:id', deleteTodo)
-router.get('/from/:date1/to/:date2', getTodoByDate)
+router.get('/', rateLimitGet, getTodos)
+router.get('/:id', rateLimitGet, getTodo)
+router.post('/', rateLimitChange, insertTodo)
+router.put('/:id', rateLimitChange, updateTodo)
+router.delete('/:id', rateLimitChange, deleteTodo)
+router.get('/from/:date1/to/:date2', rateLimitGet, getTodoByDate)
 
-export default router;
+export default router

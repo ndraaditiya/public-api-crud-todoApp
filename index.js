@@ -9,8 +9,8 @@ const app = express()
 dotenv.config()
 
 app.use(cors())
-app.use(bodyParser.json({ limit: "30mb", extended: true }))
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }))
+app.use(bodyParser.json({ limit: '1mb', extended: true }))
+app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }))
 app.use('/todos', todoRoute)
 
 app.get('/', (req, res) => {
@@ -19,9 +19,8 @@ app.get('/', (req, res) => {
 
 const PORT = 3000
 
-mongoose.set("strictQuery", false)
-mongoose.connect(process.env.CONN_URL)
+mongoose.set('strictQuery', false)
+mongoose
+  .connect(process.env.CONN_URL)
   .then(() => app.listen(PORT, () => console.log(`Server running: ${PORT}`)))
   .catch((error) => console.log(error))
-
-
