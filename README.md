@@ -7,7 +7,8 @@ You can access this API for free, just in case you need a CRUD API when you curr
 You'all can access the API URL on: https://calm-plum-jaguar-tutu.cyclic.app/todos
 
 ```bash
-For this API URL, I sate rate limit 5 requests/minute for (POST, PUT, DELETE) and 2 requests/second for Get Data
+For this API URL
+I sate rate limit 5 requests/minute for (POST, PUT, DELETE) and 2 requests/second for Get Data
 ```
 
 This an example how you accessing the API and the responses you will got
