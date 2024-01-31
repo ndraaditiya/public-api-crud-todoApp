@@ -8,7 +8,7 @@ You'all can access the API URL on: https://calm-plum-jaguar-tutu.cyclic.app/todo
 
 ```bash
 For this API URL
-I sate rate limit 5 requests/minute for (POST, PUT, DELETE) and 2 requests/second for Get Data
+I set rate limit 5 requests/minute for (POST, PUT, DELETE) and 2 requests/second for Get Data
 ```
 
 This an example how you accessing the API and the responses you will got
